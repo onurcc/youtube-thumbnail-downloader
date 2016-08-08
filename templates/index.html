@@ -1,0 +1,23 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Youtube Thumbnail Downloader{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse" style="border-radius:0" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Youtube Thumbnail Downloader</a>
+        </div>    
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST" action="">
+            Enter A link: <input type="text" name="link">
+            <input type="submit" name="submit" value="Submit">
+        </form>
+        {% if img_page %}
+			<img src="{{ img_page }}"></img>
+        {% endif %}
+    </div>
+{% endblock %}
